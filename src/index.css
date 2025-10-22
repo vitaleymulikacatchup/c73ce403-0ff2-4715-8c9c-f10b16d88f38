@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .status-icon {
+    @apply w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg;
+  }
+
+  .status-icon.success {
+    @apply bg-success-green;
+  }
+
+  .status-icon.error {
+    @apply bg-error-red;
+  }
+
+  .browser-icon {
+    @apply w-20 h-16 bg-gray-medium rounded-t-lg relative;
+  }
+
+  .browser-icon::before {
+    content: '';
+    @apply absolute top-2 left-2 w-2 h-2 bg-white rounded-full;
+  }
+
+  .browser-icon::after {
+    content: '';
+    @apply absolute top-2 left-5 w-2 h-2 bg-white rounded-full;
+  }
+
+  .cloud-icon {
+    @apply w-20 h-16 bg-gray-medium rounded-full relative;
+  }
+
+  .cloud-icon::before {
+    content: '';
+    @apply absolute top-3 left-2 w-4 h-4 bg-gray-medium rounded-full;
+  }
+
+  .cloud-icon::after {
+    content: '';
+    @apply absolute top-1 right-2 w-6 h-6 bg-gray-medium rounded-full;
+  }
+
+  .server-icon {
+    @apply w-20 h-16 bg-gray-medium rounded-lg relative;
+  }
+
+  .server-icon::before {
+    content: '';
+    @apply absolute top-2 left-2 right-2 h-1 bg-white rounded;
+  }
+
+  .server-icon::after {
+    content: '';
+    @apply absolute bottom-2 left-2 right-2 h-1 bg-white rounded;
+  }
+}
